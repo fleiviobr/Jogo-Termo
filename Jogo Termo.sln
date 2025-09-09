@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermoLib", "TermoLib\TermoLib.csproj", "{024573FA-72A6-41D8-A09C-346873E0C07E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermoTest", "TermoTest\TermoTest.csproj", "{4C32356A-3E03-49B1-9EAD-3AA9433E6F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelaTermo", "TelaTermo\TelaTermo.csproj", "{7316A034-6A62-47C3-8D30-80C14B7F6F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermoApp", "TermoApp\TermoApp.csproj", "{EB3F0694-5C9F-42C3-B53F-7F8DB86143C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{024573FA-72A6-41D8-A09C-346873E0C07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024573FA-72A6-41D8-A09C-346873E0C07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024573FA-72A6-41D8-A09C-346873E0C07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024573FA-72A6-41D8-A09C-346873E0C07E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C32356A-3E03-49B1-9EAD-3AA9433E6F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C32356A-3E03-49B1-9EAD-3AA9433E6F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C32356A-3E03-49B1-9EAD-3AA9433E6F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C32356A-3E03-49B1-9EAD-3AA9433E6F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7316A034-6A62-47C3-8D30-80C14B7F6F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7316A034-6A62-47C3-8D30-80C14B7F6F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7316A034-6A62-47C3-8D30-80C14B7F6F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7316A034-6A62-47C3-8D30-80C14B7F6F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3F0694-5C9F-42C3-B53F-7F8DB86143C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3F0694-5C9F-42C3-B53F-7F8DB86143C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3F0694-5C9F-42C3-B53F-7F8DB86143C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3F0694-5C9F-42C3-B53F-7F8DB86143C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E2F14AF-ECAB-468D-8F4F-630CB864FE9A}
+	EndGlobalSection
+EndGlobal
