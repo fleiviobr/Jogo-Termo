@@ -96,7 +96,7 @@ namespace TelaTermo
                 label.TabIndex = 1;
                 label.BackColor = Color.White;
                 label.Text = " ";
-                label.BorderStyle = BorderStyle.FixedSingle; 
+                label.BorderStyle = BorderStyle.FixedSingle;
 
                 tabuleiro.Add(label);
                 this.Controls.Add(label);
@@ -105,5 +105,9 @@ namespace TelaTermo
             }
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show(e.KeyCode.ToString());
+        }
     }
 }

@@ -51,6 +51,7 @@
             ForeColor = SystemColors.ControlDarkDark;
             Name = "Form1";
             Text = "Form1";
+            KeyDown += Form1_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

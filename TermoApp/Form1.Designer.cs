@@ -430,6 +430,7 @@
             btnBackspace.TabIndex = 28;
             btnBackspace.Text = "<=";
             btnBackspace.UseVisualStyleBackColor = true;
+            btnBackspace.Click += btnBack;
             // 
             // btnEnter
             // 
@@ -693,15 +694,18 @@
             // 
             // Form1
             // 
+            AcceptButton = btnD;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 784);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            KeyDown += keyDown;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
@@ -762,7 +766,6 @@
         private Button btnD;
         private Button btnS;
         private Button button1;
-        private Button btnEnter;
         private Button btnM;
         private Button btnN;
         private Button btnB;
@@ -771,5 +774,6 @@
         private Button btnX;
         private Button btnZ;
         private Button btnBackspace;
+        public Button btnEnter;
     }
 }
