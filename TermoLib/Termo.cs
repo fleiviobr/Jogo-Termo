@@ -67,8 +67,13 @@
                 {
                     cor = 'P';
                 }
+
+                if (teclado[palavra[i]] != 'V')
+                {
+                    teclado[palavra[i]] = cor;
+                }
                 palavraTabuleiro.Add(new Letra(palavra[i], cor));
-                teclado[palavra[i]] = cor;
+                
             }
             tabuleiro.Add(palavraTabuleiro);
             palavraAtual++;
