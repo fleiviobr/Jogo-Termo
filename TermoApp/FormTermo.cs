@@ -161,8 +161,6 @@ namespace TermoApp
                 _ => tema.tecladoDefault,
             };
         }
-
-
         private void MostrarAviso(string mensagem, bool autoclose, int duracao)
         {
             Form aviso = new Form();
@@ -185,8 +183,8 @@ namespace TermoApp
             aviso.Controls.Add(lbl);
             aviso.ClientSize = new Size(lbl.Width + 20, lbl.Height + 20);
 
-            aviso.Location = new Point((this.Width/2) - (aviso.ClientSize.Width/2), 100);
-               System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+            aviso.Location = new Point((this.Location.X) + this.Width/2 - (aviso.ClientSize.Width/2), this.Location.Y + aviso.Height);
+            System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
             if (autoclose)
             {
                 t.Interval = duracao;
