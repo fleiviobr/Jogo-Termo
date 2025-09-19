@@ -33,8 +33,8 @@
         {
             this.temaStyle = "Light";
             this.img = Properties.Resources.DarkMode;
-            this.formBackground = ColorTranslator.FromHtml("#ffffff");
-            this.formFontColor = ColorTranslator.FromHtml("#212121");
+            this.formBackground = ColorTranslator.FromHtml("#6E5C62");
+            this.formFontColor = ColorTranslator.FromHtml("#ffffff");
             this.tabuleiroBackground = ColorTranslator.FromHtml("#212121");
             this.tabuleiroFontColor = ColorTranslator.FromHtml("#ffffff");
             this.tabuleiroV = ColorTranslator.FromHtml("#3aa394");

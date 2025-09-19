@@ -12,7 +12,7 @@ namespace TermoApp
             tema = new TemaForm();
             InitializeComponent();
             InicializaTema();
-            groupBox1.Paint += (s, e) => e.Graphics.Clear(groupBox1.BackColor);
+            btnGroupBox.Paint += (s, e) => e.Graphics.Clear(btnGroupBox.BackColor);
             groupBox2.Paint += (s, e) => e.Graphics.Clear(groupBox2.BackColor);
             groupBox3.Paint += (s, e) => e.Graphics.Clear(groupBox3.BackColor);
             this.KeyPreview = true;
@@ -27,30 +27,31 @@ namespace TermoApp
             btnTema.BackColor = tema.formBackground;
 
             for (int i = 1; i <= 6; i++)
-             {
-                for (int j = 1; j < 6; j++) 
+            {
+                for (int j = 1; j < 6; j++)
                 {
                     var button = retornButton(i, j);
-                    if (i < termo.palavraAtual) 
+                    if (i < termo.palavraAtual)
                     {
                         var letra = termo.tabuleiro[i - 1][j - 1];
                         button.BackColor = btnTabVefCor(letra.cor);
                         button.FlatAppearance.BorderColor = btnTabVefCor(letra.cor);
-                    } else
+                    }
+                    else
                     {
                         button.BackColor = tema.tabuleiroDefault;
                         button.FlatAppearance.BorderColor = tema.tabuleiroP;
                     }
                     button.ForeColor = tema.tabuleiroFontColor;
                 }
-             }
+            }
 
-             for (int i = 65; i <= 90; i++)
-             {
+            for (int i = 65; i <= 90; i++)
+            {
                 var button = (Button)Controls.Find($"btn{(char)i}", true)[0];
                 button.BackColor = btnTecVefCor(termo.teclado[(char)i]);
                 button.FlatAppearance.BorderSize = 0;
-             }
+            }
 
             btnEnter.BackColor = tema.tecladoDefault;
             btnEnter.FlatAppearance.BorderSize = 0;
@@ -97,11 +98,11 @@ namespace TermoApp
 
                 if (termo.vitoria)
                 {
-                    MostrarAviso("Parabéns! Você acertou a palavra!", false, 0);
+                    MostrarAviso("Parabéns! Você acertou a palavra!", true, 3000);
                 }
                 else if (termo.palavraAtual == 7)
                 {
-                    MostrarAviso($"Que pena! A palavra era {termo.palavraSorteada}.", false, 0);
+                    MostrarAviso($"Que pena! A palavra era {termo.palavraSorteada}.", true, 3000);
                 }
             }
         }
@@ -183,7 +184,7 @@ namespace TermoApp
             aviso.Controls.Add(lbl);
             aviso.ClientSize = new Size(lbl.Width + 20, lbl.Height + 20);
 
-            aviso.Location = new Point((this.Location.X) + this.Width/2 - (aviso.ClientSize.Width/2), this.Location.Y + aviso.Height);
+            aviso.Location = new Point((this.Location.X) + this.Width / 2 - (aviso.ClientSize.Width / 2), this.Location.Y + aviso.Height);
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
             if (autoclose)
             {
@@ -198,7 +199,22 @@ namespace TermoApp
 
             aviso.Show();
         }
-       
+        
+        public void btnResetClick(object sender, EventArgs e)
+        {
+            termo = new Termo();
+            coluna = 1;
+
+            foreach(var element in btnGroupBox.Controls)
+            {
+                if (element is Button button)
+                {
+                    button.Text = "";
+                }
+            }
+
+            InicializaTema();
+        }
         private void keyDown(object sender, KeyEventArgs e)
         {
             var tecla = e.KeyCode.ToString();
@@ -225,6 +241,8 @@ namespace TermoApp
             }
             InicializaTema();
         }
+
+
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {

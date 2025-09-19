@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTermo));
-            groupBox1 = new GroupBox();
+            btnGroupBox = new GroupBox();
             groupBox3 = new GroupBox();
+            btnReset = new Button();
             btnTema = new Button();
-            imageList = new ImageList(components);
             label1 = new Label();
             btn65 = new Button();
             groupBox2 = new GroupBox();
@@ -94,56 +92,57 @@
             btn13 = new Button();
             btn12 = new Button();
             btn11 = new Button();
-            groupBox1.SuspendLayout();
+            btnGroupBox.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // btnGroupBox
             // 
-            groupBox1.Anchor = AnchorStyles.None;
-            groupBox1.Controls.Add(groupBox3);
-            groupBox1.Controls.Add(btn65);
-            groupBox1.Controls.Add(groupBox2);
-            groupBox1.Controls.Add(btn64);
-            groupBox1.Controls.Add(btn63);
-            groupBox1.Controls.Add(btn62);
-            groupBox1.Controls.Add(btn61);
-            groupBox1.Controls.Add(btn55);
-            groupBox1.Controls.Add(btn54);
-            groupBox1.Controls.Add(btn53);
-            groupBox1.Controls.Add(btn52);
-            groupBox1.Controls.Add(btn51);
-            groupBox1.Controls.Add(btn45);
-            groupBox1.Controls.Add(btn44);
-            groupBox1.Controls.Add(btn43);
-            groupBox1.Controls.Add(btn42);
-            groupBox1.Controls.Add(btn41);
-            groupBox1.Controls.Add(btn35);
-            groupBox1.Controls.Add(btn34);
-            groupBox1.Controls.Add(btn33);
-            groupBox1.Controls.Add(btn32);
-            groupBox1.Controls.Add(btn31);
-            groupBox1.Controls.Add(btn25);
-            groupBox1.Controls.Add(btn24);
-            groupBox1.Controls.Add(btn23);
-            groupBox1.Controls.Add(btn22);
-            groupBox1.Controls.Add(btn21);
-            groupBox1.Controls.Add(btn15);
-            groupBox1.Controls.Add(btn14);
-            groupBox1.Controls.Add(btn13);
-            groupBox1.Controls.Add(btn12);
-            groupBox1.Controls.Add(btn11);
-            groupBox1.ForeColor = SystemColors.ControlText;
-            groupBox1.Location = new Point(0, -28);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(800, 878);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
+            btnGroupBox.Anchor = AnchorStyles.None;
+            btnGroupBox.Controls.Add(groupBox3);
+            btnGroupBox.Controls.Add(btn65);
+            btnGroupBox.Controls.Add(groupBox2);
+            btnGroupBox.Controls.Add(btn64);
+            btnGroupBox.Controls.Add(btn63);
+            btnGroupBox.Controls.Add(btn62);
+            btnGroupBox.Controls.Add(btn61);
+            btnGroupBox.Controls.Add(btn55);
+            btnGroupBox.Controls.Add(btn54);
+            btnGroupBox.Controls.Add(btn53);
+            btnGroupBox.Controls.Add(btn52);
+            btnGroupBox.Controls.Add(btn51);
+            btnGroupBox.Controls.Add(btn45);
+            btnGroupBox.Controls.Add(btn44);
+            btnGroupBox.Controls.Add(btn43);
+            btnGroupBox.Controls.Add(btn42);
+            btnGroupBox.Controls.Add(btn41);
+            btnGroupBox.Controls.Add(btn35);
+            btnGroupBox.Controls.Add(btn34);
+            btnGroupBox.Controls.Add(btn33);
+            btnGroupBox.Controls.Add(btn32);
+            btnGroupBox.Controls.Add(btn31);
+            btnGroupBox.Controls.Add(btn25);
+            btnGroupBox.Controls.Add(btn24);
+            btnGroupBox.Controls.Add(btn23);
+            btnGroupBox.Controls.Add(btn22);
+            btnGroupBox.Controls.Add(btn21);
+            btnGroupBox.Controls.Add(btn15);
+            btnGroupBox.Controls.Add(btn14);
+            btnGroupBox.Controls.Add(btn13);
+            btnGroupBox.Controls.Add(btn12);
+            btnGroupBox.Controls.Add(btn11);
+            btnGroupBox.ForeColor = SystemColors.ControlText;
+            btnGroupBox.Location = new Point(0, -28);
+            btnGroupBox.Name = "btnGroupBox";
+            btnGroupBox.Size = new Size(800, 878);
+            btnGroupBox.TabIndex = 0;
+            btnGroupBox.TabStop = false;
             // 
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top;
+            groupBox3.Controls.Add(btnReset);
             groupBox3.Controls.Add(btnTema);
             groupBox3.Controls.Add(label1);
             groupBox3.Location = new Point(6, 26);
@@ -151,6 +150,21 @@
             groupBox3.Size = new Size(800, 93);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
+            // 
+            // btnReset
+            // 
+            btnReset.BackColor = Color.Transparent;
+            btnReset.BackgroundImage = Properties.Resources.reset;
+            btnReset.BackgroundImageLayout = ImageLayout.Stretch;
+            btnReset.Cursor = Cursors.Hand;
+            btnReset.FlatAppearance.BorderSize = 0;
+            btnReset.FlatStyle = FlatStyle.Flat;
+            btnReset.Location = new Point(748, 26);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(40, 40);
+            btnReset.TabIndex = 2;
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnResetClick;
             // 
             // btnTema
             // 
@@ -160,21 +174,12 @@
             btnTema.Cursor = Cursors.Hand;
             btnTema.FlatAppearance.BorderSize = 0;
             btnTema.FlatStyle = FlatStyle.Flat;
-            btnTema.ImageList = imageList;
             btnTema.Location = new Point(6, 26);
             btnTema.Name = "btnTema";
             btnTema.Size = new Size(40, 40);
             btnTema.TabIndex = 1;
             btnTema.UseVisualStyleBackColor = false;
             btnTema.Click += TrocaTema;
-            // 
-            // imageList
-            // 
-            imageList.ColorDepth = ColorDepth.Depth32Bit;
-            imageList.ImageStream = (ImageListStreamer)resources.GetObject("imageList.ImageStream");
-            imageList.TransparentColor = Color.Transparent;
-            imageList.Images.SetKeyName(0, "DarkMode.png");
-            imageList.Images.SetKeyName(1, "LightMode.png");
             // 
             // label1
             // 
@@ -1081,14 +1086,14 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = Color.FromArgb(110, 92, 98);
             ClientSize = new Size(800, 853);
-            Controls.Add(groupBox1);
+            Controls.Add(btnGroupBox);
             KeyPreview = true;
             MaximizeBox = false;
             Name = "FormTermo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Termo";
             KeyDown += keyDown;
-            groupBox1.ResumeLayout(false);
+            btnGroupBox.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -1097,7 +1102,7 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox btnGroupBox;
         private Button btn11;
         private Button btn15;
         private Button btn14;
@@ -1162,6 +1167,6 @@
         private GroupBox groupBox3;
         private Label label1;
         private Button btnTema;
-        private ImageList imageList;
+        private Button btnReset;
     }
 }
