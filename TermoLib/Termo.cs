@@ -17,11 +17,13 @@
         public List<List<Letra>> tabuleiro;
         public Dictionary<char, char> teclado;
         public int palavraAtual;
+        public bool vitoria;
 
         public Termo()
         {
             CarregaPalavras("palavras.txt");
             palavraAtual = 1;
+            vitoria = false;
             SorteiaPalavra();
             tabuleiro = new List<List<Letra>>();
             teclado = new Dictionary<char, char>();
@@ -50,6 +52,12 @@
             {
                 throw new Exception("A palavra deve ter 5 letras.");
             }
+
+            if(palavra == palavraSorteada)
+            {
+                vitoria = true;
+            }
+
             var palavraTabuleiro = new List<Letra>();
             char cor;
             for (int i = 0; i < palavra.Length; i++)
