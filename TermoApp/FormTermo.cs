@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.ObjectiveC;
 using TermoLib;
 namespace TermoApp
 {
@@ -5,11 +6,14 @@ namespace TermoApp
     {
         public Termo termo;
         public TemaForm tema;
-        int coluna = 1;
+        int coluna;
+        int[] placar;
         public FormTermo()
         {
             termo = new Termo();
             tema = new TemaForm();
+            coluna = 1;
+            placar = new int[7];
             InitializeComponent();
             InicializaTema();
             btnGroupBox.Paint += (s, e) => e.Graphics.Clear(btnGroupBox.BackColor);
@@ -25,6 +29,8 @@ namespace TermoApp
             label1.ForeColor = tema.formFontColor;
             btnTema.BackgroundImage = tema.img;
             btnTema.BackColor = tema.formBackground;
+            lblPlacar.ForeColor = tema.formFontColor;
+            lblPlacarDetalhado.ForeColor = tema.formFontColor;
 
             for (int i = 1; i <= 6; i++)
             {
@@ -39,8 +45,16 @@ namespace TermoApp
                     }
                     else
                     {
-                        button.BackColor = tema.tabuleiroDefault;
-                        button.FlatAppearance.BorderColor = tema.tabuleiroP;
+                        if (i == termo.palavraAtual)
+                        {
+                            button.BackColor = tema.tabuleiroAtivo;
+                            button.FlatAppearance.BorderColor = tema.tabuleiroP;
+                        }
+                        else
+                        {
+                            button.BackColor = tema.tabuleiroDefault;
+                            button.FlatAppearance.BorderColor = tema.tabuleiroDefault;
+                        }
                     }
                     button.ForeColor = tema.tabuleiroFontColor;
                 }
@@ -96,15 +110,64 @@ namespace TermoApp
                 AtualizaTeclado();
                 coluna = 1;
 
+                if(termo.palavraAtual <= 6 && !termo.vitoria)
+                {
+                    for(int i = 1; i <=5; i++)
+                    {
+                        var button = retornButton(termo.palavraAtual, i);
+                        button.BackColor = tema.tabuleiroAtivo;
+                        button.FlatAppearance.BorderColor = tema.tabuleiroP;
+                    }
+                }
+
                 if (termo.vitoria)
                 {
                     MostrarAviso("Parabéns! Você acertou a palavra!", true, 3000);
+                    placar[termo.palavraAtual - 2]++;
                 }
                 else if (termo.palavraAtual == 7)
                 {
                     MostrarAviso($"Que pena! A palavra era {termo.palavraSorteada}.", true, 3000);
+                    placar[6]++;
+                }
+
+                AtualizaPlacar();
+            }
+        }
+
+        private void AtualizaPlacar()
+        {
+            int count = 0;
+            int vit = 0;
+
+            lblPlacar.Text = "Placar:\n";
+            for (int i = 0; i < 7; i++)
+            {
+                if (i < 6)
+                {
+                    count += placar[i];
+                    vit += placar[i];
+                }
+                else
+                {
+                    count += placar[i];
+                    lblPlacar.Text += $"Vitórias: {vit}\n";
+                    lblPlacar.Text += $"Derrotas: {placar[i]}\n";
+                    lblPlacar.Text += $"Total de jogos: {count}\n";
                 }
             }
+        }
+        public void DetalhaPlacar(object sender, EventArgs e)
+        {
+            for(int i = 0; i < 6; i++)
+            {
+                lblPlacarDetalhado.Text += $"{i + 1} tentativa: {placar[i]}\n";
+            }
+        }
+
+        public void EscondePlacar(object sender, EventArgs e)
+        {
+            lblPlacarDetalhado.Text = "";
         }
 
         public void btnBack(object sender, EventArgs e)
@@ -214,6 +277,16 @@ namespace TermoApp
             }
 
             InicializaTema();
+        }
+
+        public void btnPosicaoClick(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int posx = (int)(btn.Name[4]) - 48;
+            int posy = (int)(btn.Name[3]) - 48;
+            if (termo.palavraAtual == posy){
+                coluna = posx;
+            }
         }
         private void keyDown(object sender, KeyEventArgs e)
         {

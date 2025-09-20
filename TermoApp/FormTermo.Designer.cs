@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             btnGroupBox = new GroupBox();
+            lblPlacarDetalhado = new Label();
+            lblPlacar = new Label();
             groupBox3 = new GroupBox();
             btnReset = new Button();
             btnTema = new Button();
@@ -100,6 +102,8 @@
             // btnGroupBox
             // 
             btnGroupBox.Anchor = AnchorStyles.None;
+            btnGroupBox.Controls.Add(lblPlacarDetalhado);
+            btnGroupBox.Controls.Add(lblPlacar);
             btnGroupBox.Controls.Add(groupBox3);
             btnGroupBox.Controls.Add(btn65);
             btnGroupBox.Controls.Add(groupBox2);
@@ -138,6 +142,28 @@
             btnGroupBox.Size = new Size(800, 878);
             btnGroupBox.TabIndex = 0;
             btnGroupBox.TabStop = false;
+            // 
+            // lblPlacarDetalhado
+            // 
+            lblPlacarDetalhado.AutoSize = true;
+            lblPlacarDetalhado.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPlacarDetalhado.Location = new Point(12, 216);
+            lblPlacarDetalhado.Name = "lblPlacarDetalhado";
+            lblPlacarDetalhado.Size = new Size(0, 23);
+            lblPlacarDetalhado.TabIndex = 31;
+            lblPlacarDetalhado.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblPlacar
+            // 
+            lblPlacar.AutoSize = true;
+            lblPlacar.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPlacar.Location = new Point(12, 150);
+            lblPlacar.Name = "lblPlacar";
+            lblPlacar.Size = new Size(180, 124);
+            lblPlacar.TabIndex = 30;
+            lblPlacar.Text = "Placar:\r\nVitórias: 0\r\nDerrotas: 0\r\nTotal de jogos: 0\r\n";
+            lblPlacar.MouseLeave += EscondePlacar;
+            lblPlacar.MouseHover += DetalhaPlacar;
             // 
             // groupBox3
             // 
@@ -206,6 +232,7 @@
             btn65.Size = new Size(72, 72);
             btn65.TabIndex = 29;
             btn65.UseVisualStyleBackColor = false;
+            btn65.Click += btnPosicaoClick;
             // 
             // groupBox2
             // 
@@ -651,6 +678,7 @@
             btn64.TabIndex = 28;
             btn64.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn64.UseVisualStyleBackColor = false;
+            btn64.Click += btnPosicaoClick;
             // 
             // btn63
             // 
@@ -666,6 +694,7 @@
             btn63.Size = new Size(72, 72);
             btn63.TabIndex = 27;
             btn63.UseVisualStyleBackColor = false;
+            btn63.Click += btnPosicaoClick;
             // 
             // btn62
             // 
@@ -681,6 +710,7 @@
             btn62.Size = new Size(72, 72);
             btn62.TabIndex = 26;
             btn62.UseVisualStyleBackColor = false;
+            btn62.Click += btnPosicaoClick;
             // 
             // btn61
             // 
@@ -696,6 +726,7 @@
             btn61.Size = new Size(72, 72);
             btn61.TabIndex = 25;
             btn61.UseVisualStyleBackColor = false;
+            btn61.Click += btnPosicaoClick;
             // 
             // btn55
             // 
@@ -711,6 +742,7 @@
             btn55.Size = new Size(72, 72);
             btn55.TabIndex = 24;
             btn55.UseVisualStyleBackColor = false;
+            btn55.Click += btnPosicaoClick;
             // 
             // btn54
             // 
@@ -727,6 +759,7 @@
             btn54.TabIndex = 23;
             btn54.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn54.UseVisualStyleBackColor = false;
+            btn54.Click += btnPosicaoClick;
             // 
             // btn53
             // 
@@ -742,6 +775,7 @@
             btn53.Size = new Size(72, 72);
             btn53.TabIndex = 22;
             btn53.UseVisualStyleBackColor = false;
+            btn53.Click += btnPosicaoClick;
             // 
             // btn52
             // 
@@ -757,6 +791,7 @@
             btn52.Size = new Size(72, 72);
             btn52.TabIndex = 21;
             btn52.UseVisualStyleBackColor = false;
+            btn52.Click += btnPosicaoClick;
             // 
             // btn51
             // 
@@ -772,6 +807,7 @@
             btn51.Size = new Size(72, 72);
             btn51.TabIndex = 20;
             btn51.UseVisualStyleBackColor = false;
+            btn51.Click += btnPosicaoClick;
             // 
             // btn45
             // 
@@ -787,6 +823,7 @@
             btn45.Size = new Size(72, 72);
             btn45.TabIndex = 19;
             btn45.UseVisualStyleBackColor = false;
+            btn45.Click += btnPosicaoClick;
             // 
             // btn44
             // 
@@ -803,6 +840,7 @@
             btn44.TabIndex = 18;
             btn44.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn44.UseVisualStyleBackColor = false;
+            btn44.Click += btnPosicaoClick;
             // 
             // btn43
             // 
@@ -818,6 +856,7 @@
             btn43.Size = new Size(72, 72);
             btn43.TabIndex = 17;
             btn43.UseVisualStyleBackColor = false;
+            btn43.Click += btnPosicaoClick;
             // 
             // btn42
             // 
@@ -833,6 +872,7 @@
             btn42.Size = new Size(72, 72);
             btn42.TabIndex = 16;
             btn42.UseVisualStyleBackColor = false;
+            btn42.Click += btnPosicaoClick;
             // 
             // btn41
             // 
@@ -848,6 +888,7 @@
             btn41.Size = new Size(72, 72);
             btn41.TabIndex = 15;
             btn41.UseVisualStyleBackColor = false;
+            btn41.Click += btnPosicaoClick;
             // 
             // btn35
             // 
@@ -863,6 +904,7 @@
             btn35.Size = new Size(72, 72);
             btn35.TabIndex = 14;
             btn35.UseVisualStyleBackColor = false;
+            btn35.Click += btnPosicaoClick;
             // 
             // btn34
             // 
@@ -879,6 +921,7 @@
             btn34.TabIndex = 13;
             btn34.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn34.UseVisualStyleBackColor = false;
+            btn34.Click += btnPosicaoClick;
             // 
             // btn33
             // 
@@ -894,6 +937,7 @@
             btn33.Size = new Size(72, 72);
             btn33.TabIndex = 12;
             btn33.UseVisualStyleBackColor = false;
+            btn33.Click += btnPosicaoClick;
             // 
             // btn32
             // 
@@ -909,6 +953,7 @@
             btn32.Size = new Size(72, 72);
             btn32.TabIndex = 11;
             btn32.UseVisualStyleBackColor = false;
+            btn32.Click += btnPosicaoClick;
             // 
             // btn31
             // 
@@ -924,6 +969,7 @@
             btn31.Size = new Size(72, 72);
             btn31.TabIndex = 10;
             btn31.UseVisualStyleBackColor = false;
+            btn31.Click += btnPosicaoClick;
             // 
             // btn25
             // 
@@ -939,6 +985,7 @@
             btn25.Size = new Size(72, 72);
             btn25.TabIndex = 9;
             btn25.UseVisualStyleBackColor = false;
+            btn25.Click += btnPosicaoClick;
             // 
             // btn24
             // 
@@ -955,6 +1002,7 @@
             btn24.TabIndex = 8;
             btn24.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn24.UseVisualStyleBackColor = false;
+            btn24.Click += btnPosicaoClick;
             // 
             // btn23
             // 
@@ -970,6 +1018,7 @@
             btn23.Size = new Size(72, 72);
             btn23.TabIndex = 7;
             btn23.UseVisualStyleBackColor = false;
+            btn23.Click += btnPosicaoClick;
             // 
             // btn22
             // 
@@ -985,6 +1034,7 @@
             btn22.Size = new Size(72, 72);
             btn22.TabIndex = 6;
             btn22.UseVisualStyleBackColor = false;
+            btn22.Click += btnPosicaoClick;
             // 
             // btn21
             // 
@@ -1000,6 +1050,7 @@
             btn21.Size = new Size(72, 72);
             btn21.TabIndex = 5;
             btn21.UseVisualStyleBackColor = false;
+            btn21.Click += btnPosicaoClick;
             // 
             // btn15
             // 
@@ -1015,6 +1066,7 @@
             btn15.Size = new Size(72, 72);
             btn15.TabIndex = 4;
             btn15.UseVisualStyleBackColor = false;
+            btn15.Click += btnPosicaoClick;
             // 
             // btn14
             // 
@@ -1031,6 +1083,7 @@
             btn14.TabIndex = 3;
             btn14.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn14.UseVisualStyleBackColor = false;
+            btn14.Click += btnPosicaoClick;
             // 
             // btn13
             // 
@@ -1047,6 +1100,7 @@
             btn13.Size = new Size(72, 72);
             btn13.TabIndex = 2;
             btn13.UseVisualStyleBackColor = false;
+            btn13.Click += btnPosicaoClick;
             // 
             // btn12
             // 
@@ -1062,6 +1116,7 @@
             btn12.Size = new Size(72, 72);
             btn12.TabIndex = 1;
             btn12.UseVisualStyleBackColor = false;
+            btn12.Click += btnPosicaoClick;
             // 
             // btn11
             // 
@@ -1078,6 +1133,7 @@
             btn11.Size = new Size(72, 72);
             btn11.TabIndex = 0;
             btn11.UseVisualStyleBackColor = false;
+            btn11.Click += btnPosicaoClick;
             // 
             // FormTermo
             // 
@@ -1094,6 +1150,7 @@
             Text = "Termo";
             KeyDown += keyDown;
             btnGroupBox.ResumeLayout(false);
+            btnGroupBox.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -1168,5 +1225,7 @@
         private Label label1;
         private Button btnTema;
         private Button btnReset;
+        private Label lblPlacar;
+        private Label lblPlacarDetalhado;
     }
 }
