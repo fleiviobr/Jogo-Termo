@@ -296,7 +296,7 @@ namespace TermoApp
                 var button = Controls.Find($"btn{tecla}", true)[0];
                 btnTecladoClick(button, new EventArgs());
             }
-            else if (tecla == "Back")
+            if (tecla == "Back")
             {
                 btnBack(btnBackspace, new EventArgs());
             }
