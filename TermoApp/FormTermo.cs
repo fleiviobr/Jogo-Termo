@@ -73,6 +73,7 @@ namespace TermoApp
             btnBackspace.FlatAppearance.BorderSize = 0;
 
         }
+
         public void btnTecladoClick(object sender, EventArgs e)
         {
             if ((coluna > 5) || (termo.vitoria == true)) return;
@@ -85,6 +86,7 @@ namespace TermoApp
 
             coluna++;
         }
+
         public void btnEnterClick(object sender, EventArgs e)
         {
             if (termo.vitoria) return;
@@ -132,6 +134,7 @@ namespace TermoApp
                 AtualizaPlacar();
             }
         }
+
         private void AtualizaPlacar()
         {
             int count = 0;
@@ -154,6 +157,7 @@ namespace TermoApp
                 }
             }
         }
+
         public void DetalhaPlacar(object sender, EventArgs e)
         {
             for(int i = 0; i < 6; i++)
@@ -161,10 +165,12 @@ namespace TermoApp
                 lblPlacarDetalhado.Text += $"{i + 1} tentativa: {placar[i]}\n";
             }
         }
+
         public void EscondePlacar(object sender, EventArgs e)
         {
             lblPlacarDetalhado.Text = "";
         }
+
         public void btnBack(object sender, EventArgs e)
         {
             if (coluna == 1) return;
@@ -172,12 +178,14 @@ namespace TermoApp
             var button = retornButton(termo.palavraAtual, coluna);
             button.Text = "";
         }
+
         private Button retornButton(int linha, int coluna)
         {
             var nomeButton = $"btn{linha}{coluna}";
             var button = Controls.Find(nomeButton, true)[0];
             return (Button)button;
         }
+
         public void AtualizaTabuleiro()
         {
             for (int col = 0; col < 5; col++)
@@ -188,6 +196,7 @@ namespace TermoApp
                 button.FlatAppearance.BorderColor = btnTabVefCor(letra.cor);
             }
         }
+
         public void AtualizaTeclado()
         {
             foreach (var key in termo.teclado.Keys)
@@ -197,6 +206,7 @@ namespace TermoApp
                 button.BackColor = btnTecVefCor(termo.teclado[key]);
             }
         }
+
         private Color btnTabVefCor(char letra)
         {
             return letra switch
@@ -206,6 +216,7 @@ namespace TermoApp
                 _ => tema.tabuleiroP,
             };
         }
+
         private Color btnTecVefCor(char letra)
         {
             return letra switch
@@ -216,6 +227,7 @@ namespace TermoApp
                 _ => tema.tecladoDefault,
             };
         }
+
         private void MostrarAviso(string mensagem, bool autoclose, int duracao)
         {
             Form aviso = new Form();
@@ -253,6 +265,7 @@ namespace TermoApp
 
             aviso.Show();
         }
+
         public void btnResetClick(object sender, EventArgs e)
         {
             termo = new Termo();
@@ -268,6 +281,7 @@ namespace TermoApp
 
             InicializaTema();
         }
+
         public void btnPosicaoClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -277,6 +291,7 @@ namespace TermoApp
                 coluna = posx;
             }
         }
+
         private void keyDown(object sender, KeyEventArgs e)
         {
             var tecla = e.KeyCode.ToString();
@@ -290,6 +305,7 @@ namespace TermoApp
                 btnBack(btnBackspace, new EventArgs());
             }
         }
+
         public void TrocaTema(object sender, EventArgs e)
         {
             if (tema.temaStyle == "Dark")
@@ -302,6 +318,7 @@ namespace TermoApp
             }
             InicializaTema();
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             Keys key = keyData & Keys.KeyCode;
