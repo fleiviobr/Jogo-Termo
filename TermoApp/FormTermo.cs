@@ -78,7 +78,6 @@ namespace TermoApp
 
         public void btnTecladoClick(object sender, EventArgs e)
         {
-            TocarSom(sender, e);
             if ((coluna > 5) || (termo.vitoria == true)) return;
             var button = (Button)sender;
             if (button.BackColor == tema.tecladoP) return;
@@ -325,12 +324,6 @@ namespace TermoApp
             InicializaTema();
         }
 
-        private void TocarSom(object sender, EventArgs e)
-        {
-            SoundPlayer player = new SoundPlayer(Properties.Resources.keyboard);
-            player.Play();
-        }
-
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             Keys key = keyData & Keys.KeyCode;
@@ -351,16 +344,6 @@ namespace TermoApp
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
-        }
-
-        private void lblVitoria_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPlacar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
