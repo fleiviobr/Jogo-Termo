@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             btnGroupBox = new GroupBox();
-            lblTentativas = new Label();
-            lblDerrota = new Label();
-            lblVitoria = new Label();
             lblPlacarDetalhado = new Label();
-            lblPlacar = new Label();
             groupBox3 = new GroupBox();
             btnReset = new Button();
             btnTema = new Button();
@@ -105,11 +101,7 @@
             // btnGroupBox
             // 
             btnGroupBox.Anchor = AnchorStyles.None;
-            btnGroupBox.Controls.Add(lblTentativas);
-            btnGroupBox.Controls.Add(lblDerrota);
-            btnGroupBox.Controls.Add(lblVitoria);
             btnGroupBox.Controls.Add(lblPlacarDetalhado);
-            btnGroupBox.Controls.Add(lblPlacar);
             btnGroupBox.Controls.Add(groupBox3);
             btnGroupBox.Controls.Add(btn65);
             btnGroupBox.Controls.Add(groupBox2);
@@ -151,40 +143,6 @@
             btnGroupBox.TabIndex = 0;
             btnGroupBox.TabStop = false;
             // 
-            // lblTentativas
-            // 
-            lblTentativas.AutoSize = true;
-            lblTentativas.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblTentativas.ForeColor = Color.Yellow;
-            lblTentativas.Location = new Point(4, 217);
-            lblTentativas.Name = "lblTentativas";
-            lblTentativas.Size = new Size(156, 21);
-            lblTentativas.TabIndex = 34;
-            lblTentativas.Text = "Total De Tentativas:";
-            // 
-            // lblDerrota
-            // 
-            lblDerrota.AutoSize = true;
-            lblDerrota.Font = new Font("Palatino Linotype", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblDerrota.ForeColor = Color.Red;
-            lblDerrota.Location = new Point(1, 179);
-            lblDerrota.Name = "lblDerrota";
-            lblDerrota.Size = new Size(130, 35);
-            lblDerrota.TabIndex = 33;
-            lblDerrota.Text = "Derrotas:";
-            // 
-            // lblVitoria
-            // 
-            lblVitoria.AutoSize = true;
-            lblVitoria.Font = new Font("Palatino Linotype", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblVitoria.ForeColor = Color.Lime;
-            lblVitoria.Location = new Point(0, 145);
-            lblVitoria.Name = "lblVitoria";
-            lblVitoria.Size = new Size(121, 35);
-            lblVitoria.TabIndex = 32;
-            lblVitoria.Text = "Vitórias:";
-            lblVitoria.Click += lblVitoria_Click;
-            // 
             // lblPlacarDetalhado
             // 
             lblPlacarDetalhado.AutoSize = true;
@@ -194,20 +152,6 @@
             lblPlacarDetalhado.Size = new Size(0, 19);
             lblPlacarDetalhado.TabIndex = 31;
             lblPlacarDetalhado.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblPlacar
-            // 
-            lblPlacar.AutoSize = true;
-            lblPlacar.Font = new Font("Palatino Linotype", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPlacar.ForeColor = Color.Aqua;
-            lblPlacar.Location = new Point(5, 100);
-            lblPlacar.Name = "lblPlacar";
-            lblPlacar.Size = new Size(154, 44);
-            lblPlacar.TabIndex = 30;
-            lblPlacar.Text = "< Placar >";
-            lblPlacar.Click += lblPlacar_Click;
-            lblPlacar.MouseLeave += EscondePlacar;
-            lblPlacar.MouseHover += DetalhaPlacar;
             // 
             // groupBox3
             // 
@@ -1304,10 +1248,6 @@
         private Label label1;
         private Button btnTema;
         private Button btnReset;
-        private Label lblPlacar;
         private Label lblPlacarDetalhado;
-        private Label lblVitoria;
-        private Label lblTentativas;
-        private Label lblDerrota;
     }
 }
