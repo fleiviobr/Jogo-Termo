@@ -151,22 +151,20 @@
             lblPlacarDetalhado.TabIndex = 31;
             lblPlacarDetalhado.TextAlign = ContentAlignment.MiddleCenter;
             // 
-<<<<<<< HEAD
             // lblPlacar
             // 
             lblPlacar.AutoSize = true;
-            lblPlacar.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPlacar.ForeColor = Color.White;
-            lblPlacar.Location = new Point(6, 133);
+            lblPlacar.Font = new Font("Palatino Linotype", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPlacar.ForeColor = Color.Aqua;
+            lblPlacar.Location = new Point(5, 100);
             lblPlacar.Name = "lblPlacar";
-            lblPlacar.Size = new Size(81, 31);
+            lblPlacar.Size = new Size(154, 44);
             lblPlacar.TabIndex = 30;
-            lblPlacar.Text = "Placar:";
+            lblPlacar.Text = "< Placar >";
+            lblPlacar.Click += lblPlacar_Click;
             lblPlacar.MouseLeave += EscondePlacar;
             lblPlacar.MouseHover += DetalhaPlacar;
             // 
-=======
->>>>>>> 915aea4a599a389266efb5b0e9841abce53e4507
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top;
