@@ -110,9 +110,9 @@ namespace TermoApp
                 AtualizaTeclado();
                 coluna = 1;
 
-                if(termo.palavraAtual <= 6 && !termo.vitoria)
+                if (termo.palavraAtual <= 6 && !termo.vitoria)
                 {
-                    for(int i = 1; i <=5; i++)
+                    for (int i = 1; i <= 5; i++)
                     {
                         var button = retornButton(termo.palavraAtual, i);
                         button.BackColor = tema.tabuleiroAtivo;
@@ -160,7 +160,7 @@ namespace TermoApp
 
         public void DetalhaPlacar(object sender, EventArgs e)
         {
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 lblPlacarDetalhado.Text += $"{i + 1} tentativa: {placar[i]}\n";
             }
@@ -271,7 +271,7 @@ namespace TermoApp
             termo = new Termo();
             coluna = 1;
 
-            foreach(var element in btnGroupBox.Controls)
+            foreach (var element in btnGroupBox.Controls)
             {
                 if (element is Button button)
                 {
@@ -287,7 +287,8 @@ namespace TermoApp
             Button btn = (Button)sender;
             int posx = (int)(btn.Name[4]) - 48;
             int posy = (int)(btn.Name[3]) - 48;
-            if (termo.palavraAtual == posy){
+            if (termo.palavraAtual == posy)
+            {
                 coluna = posx;
             }
         }
@@ -339,6 +340,16 @@ namespace TermoApp
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void lblVitoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlacar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
