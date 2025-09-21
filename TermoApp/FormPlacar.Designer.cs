@@ -40,9 +40,9 @@
             lblPlacar.AutoSize = true;
             lblPlacar.Font = new Font("Palatino Linotype", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPlacar.ForeColor = Color.Beige;
-            lblPlacar.Location = new Point(246, 27);
+            lblPlacar.Location = new Point(281, 36);
             lblPlacar.Name = "lblPlacar";
-            lblPlacar.Size = new Size(301, 65);
+            lblPlacar.Size = new Size(378, 81);
             lblPlacar.TabIndex = 35;
             lblPlacar.Text = "< PLACAR >";
             // 
@@ -51,9 +51,9 @@
             lblVitorias.AutoSize = true;
             lblVitorias.Font = new Font("Palatino Linotype", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblVitorias.ForeColor = Color.Lime;
-            lblVitorias.Location = new Point(122, 92);
+            lblVitorias.Location = new Point(139, 123);
             lblVitorias.Name = "lblVitorias";
-            lblVitorias.Size = new Size(205, 49);
+            lblVitorias.Size = new Size(264, 62);
             lblVitorias.TabIndex = 36;
             lblVitorias.Text = "-> Vitórias:";
             // 
@@ -62,9 +62,9 @@
             lblDerrotas.AutoSize = true;
             lblDerrotas.Font = new Font("Palatino Linotype", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblDerrotas.ForeColor = Color.Red;
-            lblDerrotas.Location = new Point(122, 141);
+            lblDerrotas.Location = new Point(139, 188);
             lblDerrotas.Name = "lblDerrotas";
-            lblDerrotas.Size = new Size(218, 49);
+            lblDerrotas.Size = new Size(278, 62);
             lblDerrotas.TabIndex = 37;
             lblDerrotas.Text = "-> Derrotas:";
             // 
@@ -73,9 +73,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Palatino Linotype", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Yellow;
-            label1.Location = new Point(122, 190);
+            label1.Location = new Point(139, 253);
             label1.Name = "label1";
-            label1.Size = new Size(247, 49);
+            label1.Size = new Size(316, 62);
             label1.TabIndex = 38;
             label1.Text = "-> Tentativas:";
             // 
@@ -84,25 +84,27 @@
             lblLinha.AutoSize = true;
             lblLinha.Font = new Font("Palatino Linotype", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblLinha.ForeColor = Color.Transparent;
-            lblLinha.Location = new Point(90, 283);
+            lblLinha.Location = new Point(103, 377);
             lblLinha.Name = "lblLinha";
-            lblLinha.Size = new Size(288, 49);
+            lblLinha.Size = new Size(369, 62);
             lblLinha.TabIndex = 39;
             lblLinha.Text = "-------------------";
             // 
             // FormPlacar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Indigo;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(lblLinha);
             Controls.Add(label1);
             Controls.Add(lblDerrotas);
             Controls.Add(lblVitorias);
             Controls.Add(lblPlacar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormPlacar";
             Text = "Form1";
+            Load += FormPlacar_Load;
             ResumeLayout(false);
             PerformLayout();
         }

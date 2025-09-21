@@ -12,9 +12,16 @@ namespace TermoApp
 {
     public partial class FormPlacar : Form
     {
+        public TemaForm tema;
         public FormPlacar()
         {
             InitializeComponent();
+            tema = new TemaForm();
+        }
+
+        private void FormPlacar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

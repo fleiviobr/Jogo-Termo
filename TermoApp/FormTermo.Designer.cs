@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             btnGroupBox = new GroupBox();
+            lblPlacar = new Label();
             lblPlacarDetalhado = new Label();
             groupBox3 = new GroupBox();
             btnReset = new Button();
@@ -161,7 +162,6 @@
             lblPlacar.Size = new Size(154, 44);
             lblPlacar.TabIndex = 30;
             lblPlacar.Text = "< Placar >";
-            lblPlacar.Click += lblPlacar_Click;
             lblPlacar.MouseLeave += EscondePlacar;
             lblPlacar.MouseHover += DetalhaPlacar;
             // 
@@ -1221,6 +1221,7 @@
         private Button btnZ;
         private Button btnBackspace;
         public Button btnEnter;
+        private Label lblPlacar;
         private GroupBox groupBox3;
         private Label label1;
         private Button btnTema;

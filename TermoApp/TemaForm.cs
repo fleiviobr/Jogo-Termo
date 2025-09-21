@@ -4,8 +4,12 @@
     {
         public String temaStyle;
         public Image img;
+        //FormTermo
         public Color formBackground;
         public Color formFontColor;
+
+        //fonte para placar
+        public Font placarFont;
 
         public Color tabuleiroBackground;
         public Color tabuleiroFontColor;
@@ -27,7 +31,14 @@
         public TemaForm()
         {
             this.temaStyle = "Dark";
+            Inicializa();
             TemaDark();
+
+        }
+
+        private void Inicializa()
+        {
+            placarFont = new Font("Palatino Linotype", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
         }
 
         public void TemaLight()
