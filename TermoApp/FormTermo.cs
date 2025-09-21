@@ -327,6 +327,16 @@ namespace TermoApp
                 btnEnterClick(btnEnter, new EventArgs());
                 return true;
             }
+            if (key == Keys.Left)
+            {
+                if (coluna > 1) coluna--;
+                return true;
+            }
+            if (key == Keys.Right)
+            {
+                if (coluna < 6) coluna++;
+                return true;
+            }
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
