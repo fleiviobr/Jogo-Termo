@@ -30,7 +30,6 @@
         {
             btnGroupBox = new GroupBox();
             lblPlacarDetalhado = new Label();
-            lblPlacar = new Label();
             groupBox3 = new GroupBox();
             btnReset = new Button();
             btnTema = new Button();
@@ -103,7 +102,6 @@
             // 
             btnGroupBox.Anchor = AnchorStyles.None;
             btnGroupBox.Controls.Add(lblPlacarDetalhado);
-            btnGroupBox.Controls.Add(lblPlacar);
             btnGroupBox.Controls.Add(groupBox3);
             btnGroupBox.Controls.Add(btn65);
             btnGroupBox.Controls.Add(groupBox2);
@@ -153,6 +151,7 @@
             lblPlacarDetalhado.TabIndex = 31;
             lblPlacarDetalhado.TextAlign = ContentAlignment.MiddleCenter;
             // 
+<<<<<<< HEAD
             // lblPlacar
             // 
             lblPlacar.AutoSize = true;
@@ -166,6 +165,8 @@
             lblPlacar.MouseLeave += EscondePlacar;
             lblPlacar.MouseHover += DetalhaPlacar;
             // 
+=======
+>>>>>>> 915aea4a599a389266efb5b0e9841abce53e4507
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top;
@@ -1226,7 +1227,6 @@
         private Label label1;
         private Button btnTema;
         private Button btnReset;
-        private Label lblPlacar;
         private Label lblPlacarDetalhado;
     }
 }
