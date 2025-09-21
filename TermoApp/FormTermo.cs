@@ -1,11 +1,13 @@
-using System.Runtime.InteropServices.ObjectiveC;
 using TermoLib;
+using System.Media;
 namespace TermoApp
+
 {
     public partial class FormTermo : Form
     {
         public Termo termo;
         public TemaForm tema;
+        SoundPlayer player;
         int coluna;
         int[] placar;
         public FormTermo()
@@ -76,6 +78,7 @@ namespace TermoApp
 
         public void btnTecladoClick(object sender, EventArgs e)
         {
+            TocarSom(sender, e);
             if ((coluna > 5) || (termo.vitoria == true)) return;
             var button = (Button)sender;
             if (button.BackColor == tema.tecladoP) return;
@@ -124,6 +127,8 @@ namespace TermoApp
                 {
                     MostrarAviso("Parabéns! Você acertou a palavra!", true, 3000);
                     placar[termo.palavraAtual - 2]++;
+                    player = new SoundPlayer(Properties.Resources.vitoria);
+                    player.Play();
                 }
                 else if (termo.palavraAtual == 7)
                 {
@@ -317,6 +322,12 @@ namespace TermoApp
                 tema.TemaDark();
             }
             InicializaTema();
+        }
+
+        private void TocarSom(object sender, EventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.keyboard);
+            player.Play();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
