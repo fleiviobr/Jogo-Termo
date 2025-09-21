@@ -1,5 +1,6 @@
 ﻿namespace TermoLib
-{
+ //
+ {
     public class Letra
     {
         public char caracter;
