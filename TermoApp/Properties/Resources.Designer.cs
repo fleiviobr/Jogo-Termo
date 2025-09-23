@@ -73,6 +73,15 @@ namespace TermoApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream derrota {
+            get {
+                return ResourceManager.GetStream("derrota", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream keyboard {
             get {
                 return ResourceManager.GetStream("keyboard", resourceCulture);
@@ -85,6 +94,26 @@ namespace TermoApp.Properties {
         internal static System.Drawing.Bitmap LightMode {
             get {
                 object obj = ResourceManager.GetObject("LightMode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loserIcon {
+            get {
+                object obj = ResourceManager.GetObject("loserIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap placarIcon {
+            get {
+                object obj = ResourceManager.GetObject("placarIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

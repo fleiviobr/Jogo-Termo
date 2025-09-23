@@ -1,5 +1,6 @@
-using TermoLib;
+using System.Drawing.Drawing2D;
 using System.Media;
+using TermoLib;
 namespace TermoApp
 
 {
@@ -9,7 +10,7 @@ namespace TermoApp
         public TemaForm tema;
         SoundPlayer player;
         int coluna;
-        int[] placar;
+        public int[] placar;
         public FormTermo()
         {
             termo = new Termo();
@@ -76,6 +77,12 @@ namespace TermoApp
 
         }
 
+        public void btnTeclado(object sender, EventArgs e)
+        {
+            soundClick();
+            btnTecladoClick(sender, e);
+        }
+
         public void btnTecladoClick(object sender, EventArgs e)
         {
             if ((coluna > 5) || (termo.vitoria == true)) return;
@@ -91,6 +98,7 @@ namespace TermoApp
 
         public void btnEnterClick(object sender, EventArgs e)
         {
+            soundClick();
             if (termo.vitoria) return;
             string palavra = "";
 
@@ -121,18 +129,22 @@ namespace TermoApp
                         button.FlatAppearance.BorderColor = tema.tabuleiroP;
                     }
                 }
-
-                if (termo.vitoria)
+                else
                 {
-                    MostrarAviso("Parabéns! Você acertou a palavra!", true, 3000);
-                    placar[termo.palavraAtual - 2]++;
-                    player = new SoundPlayer(Properties.Resources.vitoria);
-                    player.Play();
-                }
-                else if (termo.palavraAtual == 7)
-                {
-                    MostrarAviso($"Que pena! A palavra era {termo.palavraSorteada}.", true, 3000);
-                    placar[6]++;
+                    if (termo.vitoria)
+                    {
+                        placar[termo.palavraAtual - 2]++;
+                        player = new SoundPlayer(Properties.Resources.vitoria);
+                        player.Play();
+                    }
+                    else if (termo.palavraAtual == 7)
+                    {
+                        player = new SoundPlayer(Properties.Resources.derrota);
+                        player.Play();
+                        placar[6]++;
+                    }
+                    FormOptions endGame = new FormOptions((termo.vitoria ? "win" : "lose"), this);;
+                    endGame.ShowDialog();
                 }
 
                 AtualizaPlacar();
@@ -162,6 +174,13 @@ namespace TermoApp
             }
         }
 
+        public void btnPlacarClick(object sender, EventArgs e)
+        {
+            soundClick();
+            FormOptions endGame = new FormOptions("placar", this); ;
+            endGame.ShowDialog();
+        }
+
         public void DetalhaPlacar(object sender, EventArgs e)
         {
             for (int i = 0; i < 6; i++)
@@ -177,6 +196,7 @@ namespace TermoApp
 
         public void btnBack(object sender, EventArgs e)
         {
+            soundClick();
             if (coluna == 1) return;
             coluna--;
             var button = retornButton(termo.palavraAtual, coluna);
@@ -237,24 +257,27 @@ namespace TermoApp
             Form aviso = new Form();
             aviso.FormBorderStyle = FormBorderStyle.None;
             aviso.StartPosition = FormStartPosition.Manual;
-            aviso.BackColor = Color.DarkBlue;
-            aviso.ForeColor = Color.White;
+            aviso.BackColor = tema.avisoBackground;
+            aviso.ForeColor = tema.formFontColor;
             aviso.TopMost = true;
             aviso.ShowInTaskbar = false;
+
 
             Label lbl = new Label()
             {
                 Text = mensagem,
                 ForeColor = Color.White,
                 Font = new Font("Segoe UI", 18, FontStyle.Bold),
-                AutoSize = true,
-                Location = new Point(10, 10)
+                AutoSize = false,
+                Width = TextRenderer.MeasureText(mensagem, new Font("Segoe UI", 18, FontStyle.Bold)).Width,
+                Height = TextRenderer.MeasureText(mensagem, new Font("Segoe UI", 18, FontStyle.Bold)).Height,
+                Location = new Point(10, 10),
             };
 
             aviso.Controls.Add(lbl);
             aviso.ClientSize = new Size(lbl.Width + 20, lbl.Height + 20);
 
-            aviso.Location = new Point((this.Location.X) + this.Width / 2 - (aviso.ClientSize.Width / 2), this.Location.Y + aviso.Height);
+            aviso.Location = new Point(this.Location.X + ((this.Width - aviso.Width) / 2) + 15, this.Location.Y + aviso.Height + 30);
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
             if (autoclose)
             {
@@ -272,6 +295,7 @@ namespace TermoApp
 
         public void btnResetClick(object sender, EventArgs e)
         {
+            soundClick();
             termo = new Termo();
             coluna = 1;
 
@@ -288,6 +312,7 @@ namespace TermoApp
 
         public void btnPosicaoClick(object sender, EventArgs e)
         {
+            soundClick();
             Button btn = (Button)sender;
             int posx = (int)(btn.Name[4]) - 48;
             int posy = (int)(btn.Name[3]) - 48;
@@ -313,6 +338,7 @@ namespace TermoApp
 
         public void TrocaTema(object sender, EventArgs e)
         {
+            soundClick();
             if (tema.temaStyle == "Dark")
             {
                 tema.TemaLight();
@@ -322,6 +348,12 @@ namespace TermoApp
                 tema.TemaDark();
             }
             InicializaTema();
+        }
+
+        private void soundClick()
+        {
+            player = new SoundPlayer(Properties.Resources.keyboard);
+            player.Play();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

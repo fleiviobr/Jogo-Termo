@@ -4,11 +4,11 @@
     {
         public String temaStyle;
         public Image img;
-        //FormTermo
+
         public Color formBackground;
         public Color formFontColor;
 
-        //fonte para placar
+        public Color formEndBackground;
         public Font placarFont;
 
         public Color tabuleiroBackground;
@@ -26,13 +26,12 @@
         public Color tecladoDefault;
 
         public Color avisoBackground;
-        public Color avisoFontColor;
 
         public TemaForm()
         {
             this.temaStyle = "Dark";
             Inicializa();
-            TemaDark();
+            TemaLight();
 
         }
 
@@ -48,22 +47,23 @@
             this.formBackground = ColorTranslator.FromHtml("#6E5C62");
             this.formFontColor = ColorTranslator.FromHtml("#ffffff");
 
-            this.tabuleiroBackground = ColorTranslator.FromHtml("#212121");
+            this.formEndBackground = ColorTranslator.FromHtml("#312B2D");
+
+            this.tabuleiroBackground = ColorTranslator.FromHtml("#6E5C62");
             this.tabuleiroFontColor = ColorTranslator.FromHtml("#ffffff");
             this.tabuleiroV = ColorTranslator.FromHtml("#3aa394");
             this.tabuleiroA = ColorTranslator.FromHtml("#d3ad69");
-            this.tabuleiroP = ColorTranslator.FromHtml("#525252");
-            this.tabuleiroAtivo = ColorTranslator.FromHtml("#212121");
-            this.tabuleiroDefault = ColorTranslator.FromHtml("#212121");
+            this.tabuleiroP = ColorTranslator.FromHtml("#312a2c");
+            this.tabuleiroAtivo = ColorTranslator.FromHtml("#6E5C62");
+            this.tabuleiroDefault = ColorTranslator.FromHtml("#615458");
 
             this.tecladoBackground = ColorTranslator.FromHtml("#4C4347");
             this.tecladoV = ColorTranslator.FromHtml("#3aa394");
             this.tecladoA = ColorTranslator.FromHtml("#d3ad69");
-            this.tecladoP = ColorTranslator.FromHtml("#525252");
-            this.tecladoDefault = ColorTranslator.FromHtml("#3a3a3c");
+            this.tecladoP = ColorTranslator.FromHtml("#594B4F");
+            this.tecladoDefault = ColorTranslator.FromHtml("#4C4347");
 
-            this.avisoBackground = ColorTranslator.FromHtml("");
-            this.avisoFontColor = ColorTranslator.FromHtml("");
+            this.avisoBackground = ColorTranslator.FromHtml("#009AFE");
         }
 
         public void TemaDark()
@@ -72,6 +72,8 @@
             this.img = Properties.Resources.LightMode;
             this.formBackground = ColorTranslator.FromHtml("#212121");
             this.formFontColor = ColorTranslator.FromHtml("#ffffff");
+
+            this.formEndBackground = ColorTranslator.FromHtml("#1A1A1A");
 
             this.tabuleiroBackground = ColorTranslator.FromHtml("#212121");
             this.tabuleiroFontColor = ColorTranslator.FromHtml("#ffffff");
@@ -87,8 +89,7 @@
             this.tecladoP = ColorTranslator.FromHtml("#525252");
             this.tecladoDefault = ColorTranslator.FromHtml("#3a3a3c");
 
-            this.avisoBackground = ColorTranslator.FromHtml("");
-            this.avisoFontColor = ColorTranslator.FromHtml("");
+            this.avisoBackground = ColorTranslator.FromHtml("#009AFE");
         }
     }
 }

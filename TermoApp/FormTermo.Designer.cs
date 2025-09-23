@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             btnGroupBox = new GroupBox();
-            lblPlacar = new Label();
             lblPlacarDetalhado = new Label();
             groupBox3 = new GroupBox();
+            btnPlacar = new Button();
             btnReset = new Button();
             btnTema = new Button();
             label1 = new Label();
@@ -94,6 +94,7 @@
             btn13 = new Button();
             btn12 = new Button();
             btn11 = new Button();
+            lblPlacar = new Label();
             btnGroupBox.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -152,22 +153,10 @@
             lblPlacarDetalhado.TabIndex = 31;
             lblPlacarDetalhado.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblPlacar
-            // 
-            lblPlacar.AutoSize = true;
-            lblPlacar.Font = new Font("Palatino Linotype", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPlacar.ForeColor = Color.Aqua;
-            lblPlacar.Location = new Point(5, 100);
-            lblPlacar.Name = "lblPlacar";
-            lblPlacar.Size = new Size(154, 44);
-            lblPlacar.TabIndex = 30;
-            lblPlacar.Text = "< Placar >";
-            lblPlacar.MouseLeave += EscondePlacar;
-            lblPlacar.MouseHover += DetalhaPlacar;
-            // 
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top;
+            groupBox3.Controls.Add(btnPlacar);
             groupBox3.Controls.Add(btnReset);
             groupBox3.Controls.Add(btnTema);
             groupBox3.Controls.Add(label1);
@@ -176,6 +165,21 @@
             groupBox3.Size = new Size(800, 93);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
+            // 
+            // btnPlacar
+            // 
+            btnPlacar.BackColor = Color.Transparent;
+            btnPlacar.BackgroundImage = Properties.Resources.placarIcon;
+            btnPlacar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnPlacar.Cursor = Cursors.Hand;
+            btnPlacar.FlatAppearance.BorderSize = 0;
+            btnPlacar.FlatStyle = FlatStyle.Flat;
+            btnPlacar.Location = new Point(689, 27);
+            btnPlacar.Name = "btnPlacar";
+            btnPlacar.Size = new Size(40, 40);
+            btnPlacar.TabIndex = 3;
+            btnPlacar.UseVisualStyleBackColor = false;
+            btnPlacar.Click += btnPlacarClick;
             // 
             // btnReset
             // 
@@ -210,11 +214,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Palatino Linotype", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(334, 33);
             label1.Name = "label1";
-            label1.Size = new Size(177, 55);
+            label1.Size = new Size(161, 54);
             label1.TabIndex = 0;
             label1.Text = "TERMO";
             // 
@@ -311,7 +315,7 @@
             btnM.TabIndex = 26;
             btnM.Text = "M";
             btnM.UseVisualStyleBackColor = false;
-            btnM.Click += btnTecladoClick;
+            btnM.Click += btnTeclado;
             // 
             // btnN
             // 
@@ -325,7 +329,7 @@
             btnN.TabIndex = 25;
             btnN.Text = "N";
             btnN.UseVisualStyleBackColor = false;
-            btnN.Click += btnTecladoClick;
+            btnN.Click += btnTeclado;
             // 
             // btnB
             // 
@@ -339,7 +343,7 @@
             btnB.TabIndex = 24;
             btnB.Text = "B";
             btnB.UseVisualStyleBackColor = false;
-            btnB.Click += btnTecladoClick;
+            btnB.Click += btnTeclado;
             // 
             // btnV
             // 
@@ -353,7 +357,7 @@
             btnV.TabIndex = 23;
             btnV.Text = "V";
             btnV.UseVisualStyleBackColor = false;
-            btnV.Click += btnTecladoClick;
+            btnV.Click += btnTeclado;
             // 
             // btnC
             // 
@@ -367,7 +371,7 @@
             btnC.TabIndex = 22;
             btnC.Text = "C";
             btnC.UseVisualStyleBackColor = false;
-            btnC.Click += btnTecladoClick;
+            btnC.Click += btnTeclado;
             // 
             // btnX
             // 
@@ -381,7 +385,7 @@
             btnX.TabIndex = 21;
             btnX.Text = "X";
             btnX.UseVisualStyleBackColor = false;
-            btnX.Click += btnTecladoClick;
+            btnX.Click += btnTeclado;
             // 
             // btnZ
             // 
@@ -395,7 +399,7 @@
             btnZ.TabIndex = 20;
             btnZ.Text = "Z";
             btnZ.UseVisualStyleBackColor = false;
-            btnZ.Click += btnTecladoClick;
+            btnZ.Click += btnTeclado;
             // 
             // btnL
             // 
@@ -409,7 +413,7 @@
             btnL.TabIndex = 19;
             btnL.Text = "L";
             btnL.UseVisualStyleBackColor = false;
-            btnL.Click += btnTecladoClick;
+            btnL.Click += btnTeclado;
             // 
             // btnK
             // 
@@ -423,7 +427,7 @@
             btnK.TabIndex = 18;
             btnK.Text = "K";
             btnK.UseVisualStyleBackColor = false;
-            btnK.Click += btnTecladoClick;
+            btnK.Click += btnTeclado;
             // 
             // btnJ
             // 
@@ -437,7 +441,7 @@
             btnJ.TabIndex = 17;
             btnJ.Text = "J";
             btnJ.UseVisualStyleBackColor = false;
-            btnJ.Click += btnTecladoClick;
+            btnJ.Click += btnTeclado;
             // 
             // btnH
             // 
@@ -451,7 +455,7 @@
             btnH.TabIndex = 16;
             btnH.Text = "H";
             btnH.UseVisualStyleBackColor = false;
-            btnH.Click += btnTecladoClick;
+            btnH.Click += btnTeclado;
             // 
             // btnG
             // 
@@ -465,7 +469,7 @@
             btnG.TabIndex = 15;
             btnG.Text = "G";
             btnG.UseVisualStyleBackColor = false;
-            btnG.Click += btnTecladoClick;
+            btnG.Click += btnTeclado;
             // 
             // btnF
             // 
@@ -479,7 +483,7 @@
             btnF.TabIndex = 14;
             btnF.Text = "F";
             btnF.UseVisualStyleBackColor = false;
-            btnF.Click += btnTecladoClick;
+            btnF.Click += btnTeclado;
             // 
             // btnD
             // 
@@ -493,7 +497,7 @@
             btnD.TabIndex = 13;
             btnD.Text = "D";
             btnD.UseVisualStyleBackColor = false;
-            btnD.Click += btnTecladoClick;
+            btnD.Click += btnTeclado;
             // 
             // btnS
             // 
@@ -507,7 +511,7 @@
             btnS.TabIndex = 12;
             btnS.Text = "S";
             btnS.UseVisualStyleBackColor = false;
-            btnS.Click += btnTecladoClick;
+            btnS.Click += btnTeclado;
             // 
             // btnA
             // 
@@ -521,7 +525,7 @@
             btnA.TabIndex = 11;
             btnA.Text = "A";
             btnA.UseVisualStyleBackColor = false;
-            btnA.Click += btnTecladoClick;
+            btnA.Click += btnTeclado;
             // 
             // btnP
             // 
@@ -535,7 +539,7 @@
             btnP.TabIndex = 10;
             btnP.Text = "P";
             btnP.UseVisualStyleBackColor = false;
-            btnP.Click += btnTecladoClick;
+            btnP.Click += btnTeclado;
             // 
             // btnO
             // 
@@ -549,7 +553,7 @@
             btnO.TabIndex = 9;
             btnO.Text = "O";
             btnO.UseVisualStyleBackColor = false;
-            btnO.Click += btnTecladoClick;
+            btnO.Click += btnTeclado;
             // 
             // btnI
             // 
@@ -563,7 +567,7 @@
             btnI.TabIndex = 8;
             btnI.Text = "I";
             btnI.UseVisualStyleBackColor = false;
-            btnI.Click += btnTecladoClick;
+            btnI.Click += btnTeclado;
             // 
             // btnU
             // 
@@ -577,7 +581,7 @@
             btnU.TabIndex = 7;
             btnU.Text = "U";
             btnU.UseVisualStyleBackColor = false;
-            btnU.Click += btnTecladoClick;
+            btnU.Click += btnTeclado;
             // 
             // btnY
             // 
@@ -591,7 +595,7 @@
             btnY.TabIndex = 6;
             btnY.Text = "Y";
             btnY.UseVisualStyleBackColor = false;
-            btnY.Click += btnTecladoClick;
+            btnY.Click += btnTeclado;
             // 
             // btnT
             // 
@@ -605,7 +609,7 @@
             btnT.TabIndex = 5;
             btnT.Text = "T";
             btnT.UseVisualStyleBackColor = false;
-            btnT.Click += btnTecladoClick;
+            btnT.Click += btnTeclado;
             // 
             // btnR
             // 
@@ -619,7 +623,7 @@
             btnR.TabIndex = 4;
             btnR.Text = "R";
             btnR.UseVisualStyleBackColor = false;
-            btnR.Click += btnTecladoClick;
+            btnR.Click += btnTeclado;
             // 
             // btnE
             // 
@@ -633,7 +637,7 @@
             btnE.TabIndex = 3;
             btnE.Text = "E";
             btnE.UseVisualStyleBackColor = false;
-            btnE.Click += btnTecladoClick;
+            btnE.Click += btnTeclado;
             // 
             // btnW
             // 
@@ -647,7 +651,7 @@
             btnW.TabIndex = 2;
             btnW.Text = "W";
             btnW.UseVisualStyleBackColor = false;
-            btnW.Click += btnTecladoClick;
+            btnW.Click += btnTeclado;
             // 
             // btnQ
             // 
@@ -661,7 +665,7 @@
             btnQ.TabIndex = 1;
             btnQ.Text = "Q";
             btnQ.UseVisualStyleBackColor = false;
-            btnQ.Click += btnTecladoClick;
+            btnQ.Click += btnTeclado;
             // 
             // btn64
             // 
@@ -1135,6 +1139,19 @@
             btn11.UseVisualStyleBackColor = false;
             btn11.Click += btnPosicaoClick;
             // 
+            // lblPlacar
+            // 
+            lblPlacar.AutoSize = true;
+            lblPlacar.Font = new Font("Palatino Linotype", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPlacar.ForeColor = Color.Aqua;
+            lblPlacar.Location = new Point(5, 100);
+            lblPlacar.Name = "lblPlacar";
+            lblPlacar.Size = new Size(154, 44);
+            lblPlacar.TabIndex = 30;
+            lblPlacar.Text = "< Placar >";
+            lblPlacar.MouseLeave += EscondePlacar;
+            lblPlacar.MouseHover += DetalhaPlacar;
+            // 
             // FormTermo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1227,5 +1244,6 @@
         private Button btnTema;
         private Button btnReset;
         private Label lblPlacarDetalhado;
+        private Button btnPlacar;
     }
 }
