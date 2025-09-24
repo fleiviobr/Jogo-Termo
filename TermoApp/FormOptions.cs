@@ -48,7 +48,7 @@ namespace TermoApp
             btnPlayAgain.Width = 500;
             btnPlayAgain.Height = 50;
             btnPlayAgain.Location = new Point(((this.ClientSize.Width - btnPlayAgain.Width) / 2), barBox.Bottom + 30);
-            btnPlayAgain.Click += PlayAgain;
+            btnPlayAgain.Click += ClosePlacar;
             this.Controls.Add(btnPlayAgain);
         }
 
@@ -154,6 +154,10 @@ namespace TermoApp
         public void PlayAgain(object sender, EventArgs e)
         {
             formTermo.btnResetClick(sender, e);
+            this.Close();
+        }
+        public void ClosePlacar(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
